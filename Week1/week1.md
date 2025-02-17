@@ -5,7 +5,7 @@ In **Week 1**, we focus on learning the foundational concepts of **Python progra
 
 ---
 
-## Day 1 - Python Basics
+## Day 1 - Python Basics & Data Science
 
 ### 1. Python Basics - Number Guessing Game
 
