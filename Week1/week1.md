@@ -38,7 +38,7 @@ while guess != number:
     guess = int(input("Guess again: "))
 
 print("Congratulations, you guessed it!")
-
+```
 ### Output 
 ![number guess output](images/image.png)
 
@@ -80,7 +80,7 @@ print(df.describe())
 
 # Display detailed information about the DataFrame
 print(df.info())
-
+```
 
 ### Output
 
@@ -119,6 +119,6 @@ plt.title('Age of People')
 
 # Display the plot
 plt.show()
-
+```
 ### Output
 ![alt text](images/data_visualization.png)
