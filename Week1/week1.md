@@ -122,3 +122,47 @@ plt.show()
 ```
 ### Output
 ![alt text](images/data_visualization.png)
+
+
+
+
+# Day 2 – Python Basics and Object-Oriented Programming (OOP)
+
+## Objective
+Today, we focused on the **basics of Python programming**, including data structures like **lists**, **tuples**, **dictionaries**, and **sets**, as well as learning about **Object-Oriented Programming (OOP)** concepts such as **encapsulation**, **inheritance**, and **polymorphism**.
+
+---
+
+### 1. Python Data Structures
+
+#### Lists
+- Lists are ordered collections that can hold items of different data types. They are mutable, meaning their contents can be changed.
+  
+#### Tuples
+- Tuples are similar to lists but are **immutable**, meaning once defined, their contents cannot be changed.
+
+#### Dictionaries
+- Dictionaries are unordered collections of key-value pairs. The keys are unique, and they are used to store and retrieve values.
+
+#### Sets
+- Sets are unordered collections that only contain unique items. They are used to store elements without duplication.
+
+---
+
+### 2. Object-Oriented Programming (OOP) in Python
+
+#### Classes and Objects
+- **Class**: A blueprint for creating objects. 
+- **Object**: An instance of a class.
+
+#### Encapsulation
+- It is the bundling of data and methods that operate on that data within a class. We use **private variables** (prefix with underscore) to hide details.
+
+#### Inheritance
+- Inheritance allows a class to inherit properties and methods from another class (parent class). The child class can override the inherited methods.
+
+#### Polymorphism
+- Polymorphism allows objects of different classes to be treated as objects of a common base class. It also refers to the ability to override methods in child classes.
+
+
+
