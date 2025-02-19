@@ -238,7 +238,6 @@ Splits the dataset into smaller groups based on feature importance.
 Each node represents a decision rule, and leaves represent predictions.
 📌 Example: Classify whether an email is spam based on words it contains.
 
-![alt text](images/q-learning.png)
 
 Random Forest
 
@@ -252,7 +251,17 @@ The model finds patterns in unlabeled data.
 
 Example algorithms:
 
-K-Means Clustering
+##### K-Means Clustering :
+What it does:
+
+Unsupervised learning algorithm for grouping data into clusters.
+Used in customer segmentation, anomaly detection, etc.
+🔹 How it works:
+
+Selects K cluster centers randomly.
+Assigns each data point to the nearest cluster.
+Updates cluster centers and repeats until convergence.
+📌 Example: Group customers based on shopping behavior.
 
 Hierarchical Clustering
 
@@ -266,7 +275,19 @@ The model learns by interacting with an environment and receiving rewards or pen
 
 Example algorithms:
 
-Q-Learning
+##### Q-Learning :
+
+What it does:
+
+Reinforcement Learning algorithm where an agent learns by interacting with an environment.
+Used in game AI, robotics, self-driving cars.
+🔹 How it works:
+
+The AI takes actions, receives rewards, and updates its Q-values.
+It learns the best actions over time to maximize rewards.
+📌 Example: AI learns to play a simple grid-based game.
+
+![alt text](images/q-learning.png)
 
 Deep Q Networks (DQN)
 
