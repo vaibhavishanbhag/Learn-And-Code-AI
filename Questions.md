@@ -1,5 +1,6 @@
 # Questions and Answers
 
+## 📌 Python Basics and Data Structures
 ### 1. Can we add elements of different data types in the same list?
 **Answer**: Yes, Python lists can hold elements of different data types. For example, you can have a list that contains integers, strings, and other data types in the same list.
 
@@ -30,3 +31,157 @@
 ### 10. What is the meaning of Polymorphism in OOP?
 **Answer**: Polymorphism allows objects of different classes to be treated as objects of a common base class. It also refers to the ability of a class to define methods that can be overridden in subclasses.
 
+# Questions & Answers
+
+## AI Basics
+
+### 1. What is the equation for linear regression?
+**Equation:**  
+Linear regression predicts `Y` based on `X` using:
+\`
+Y = mX + b
+\`
+where:
+- `m` = slope (coefficient),
+- `b` = intercept.
+
+### 2. What is the equation for logistic regression?
+**Equation:**  
+Logistic regression models probability using the sigmoid function:
+\`
+P(Y=1 | X) = 1 / (1 + e^(- (mX + b) ) )
+\`
+where `mX + b` is the linear combination of inputs.
+
+### 3. How do I plot the sigmoid curve for logistic regression?
+Use Matplotlib to visualize the sigmoid function:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+X = np.linspace(-10, 10, 100)
+Y = sigmoid(X)
+
+plt.plot(X, Y, label="Sigmoid Curve", color='red')
+plt.xlabel("X")
+plt.ylabel("Probability")
+plt.title("Sigmoid Function in Logistic Regression")
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+### 4. How do I plot the regression line using Matplotlib?
+Use Matplotlib to visualize the linear regression line:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)
+Y = np.array([2, 4, 5, 4, 5])
+
+model = LinearRegression()
+model.fit(X, Y)
+
+plt.scatter(X, Y, color='blue', label="Actual Data")
+plt.plot(X, model.predict(X), color='red', label="Regression Line")
+plt.xlabel("X values")
+plt.ylabel("Y values")
+plt.legend()
+plt.show()
+```
+
+## 📌 Machine Learning (ML)
+
+### 5. In logistic regression, what does the following X represent?
+```python
+X = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).reshape(-1, 1)
+Y = np.array([0, 0, 0, 0, 1, 1, 1, 1, 1, 1])  # Pass/Fail
+```
+**Answer:**  
+- `X` represents **study hours** of students.
+- `Y` represents **pass (1) or fail (0)**.
+
+### 6. How do I predict probabilities in logistic regression?
+```python
+from sklearn.linear_model import LogisticRegression
+
+X = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).reshape(-1, 1)
+Y = np.array([0, 0, 0, 0, 1, 1, 1, 1, 1, 1])
+
+model = LogisticRegression()
+model.fit(X, Y)
+
+# Predict probability for a student who studied 4.5 hours
+prob = model.predict_proba([[4.5]])[0][1]
+print("Predicted Probability of Passing:", prob)
+```
+
+### 7. What do the feature values in X represent in the following spam detection example?
+```python
+X = [[1, 1, 1], [0, 0, 1], [1, 0, 0], [0, 1, 1]]
+Y = [1, 0, 1, 0]  # 1=Spam, 0=Not Spam
+```
+**Answer:**  
+- Each **X row represents an email**, and the columns represent whether words like `["offer", "win", "free"]` appear.
+- `1` means the word appears, `0` means it doesn’t.
+- Example: `[1, 1, 1]` → Email contains all three words → More likely spam (`Y=1`).
+
+## 📌 Clustering (K-Means)
+
+### 8. What does the X array represent in the following K-Means clustering example?
+```python
+X = np.array([[500, 50], [520, 55], [700, 80], [710, 85], [300, 20]])
+```
+**Answer:**  
+Each row in `X` represents **a customer's spending behavior**, where:
+- First column = **Total amount spent ($)**
+- Second column = **Number of transactions**
+
+### 9. What does `Cluster: [0]` mean in K-Means clustering?
+**Answer:**  
+- The predicted **cluster label** tells which group the new data point belongs to.
+- `0` means it belongs to the **first cluster** (similar spending behavior to customers in that group).
+
+## 📌 Reinforcement Learning (Q-Learning)
+
+### 10. How does Q-learning work in a 3x3 grid environment?
+**Answer:**  
+- The agent moves in a **3x3 grid**.
+- It updates Q-values using the formula:
+  \`
+  Q(s,a) = Q(s,a) + α [reward + γ max(Q) - Q(s,a)]
+  \`
+- **Goal:** The agent learns to reach the goal at `(2,2)` efficiently.
+
+### 11. How do I visualize an agent’s movement in a Q-learning environment?
+Use Matplotlib to plot the **path taken by the agent**:
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+grid_size = 3
+path = [(0, 0), (1, 0), (1, 1), (2, 1), (2, 2)]  # Example path learned
+
+grid = np.zeros((grid_size, grid_size))
+for step in path:
+    grid[step] = 0.5  # Mark path
+
+grid[2, 2] = 1  # Goal
+
+plt.imshow(grid, cmap="coolwarm", origin="upper")
+plt.xticks(range(grid_size))
+plt.yticks(range(grid_size))
+plt.grid(True)
+plt.title("Agent's Path to Goal")
+plt.show()
+```
+
+---

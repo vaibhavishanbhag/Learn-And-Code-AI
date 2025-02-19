@@ -166,3 +166,120 @@ Today, we focused on the **basics of Python programming**, including data struct
 
 
 
+## Day 3 - Understanding AI Concepts & Machine Learning Algorithms
+
+## Objective
+
+Today, we explored fundamental AI concepts and different types of machine learning algorithms. Understanding these concepts is crucial as they form the foundation for building AI models.
+
+### 1. Introduction to AI Concepts
+
+What is Artificial Intelligence?
+
+Artificial Intelligence (AI) is the simulation of human intelligence in machines that can perform tasks such as learning, reasoning, problem-solving, perception, and language understanding.
+
+Key AI Concepts:
+
+Machine Learning (ML): A subset of AI that enables machines to learn patterns from data.
+
+Deep Learning (DL): A subset of ML using neural networks with multiple layers to model complex patterns.
+
+Natural Language Processing (NLP): Enables machines to understand and generate human language.
+
+Computer Vision: Allows machines to interpret and process images and videos.
+
+### 2. Types of Machine Learning Algorithms
+
+Machine learning can be categorized into three main types:
+
+#### 1. Supervised Learning
+
+The model learns from labeled data.
+
+Example algorithms:
+
+##### Linear Regression
+
+ What it does:
+
+Used for predicting continuous values (e.g., house prices, stock prices).
+Finds the best-fit line between input (X) and output (Y).
+🔹 How it works:
+
+The equation of a line: Y = mX + b
+The algorithm finds the best values for m (slope) and b (intercept) that minimize errors.
+📌 Example: Predict house prices based on square footage.
+
+![alt text](images/linear_regression.png)
+
+##### Logistic Regression
+
+What it does:
+
+Used for binary classification (e.g., Spam or Not Spam, Disease or No Disease).
+Instead of predicting a number, it predicts probabilities between 0 and 1.
+🔹 How it works:
+
+Uses the sigmoid function to map outputs between 0 and 1.
+If probability > 0.5 → Class 1
+If probability < 0.5 → Class 0
+📌 Example: Predict whether a student will pass an exam based on study hours.
+
+![alt text](images/logistic_regression.png)
+
+##### Decision Trees
+What it does:
+
+Works like a flowchart: "If X happens, then do Y"
+Used for both classification and regression problems.
+🔹 How it works:
+
+Splits the dataset into smaller groups based on feature importance.
+Each node represents a decision rule, and leaves represent predictions.
+📌 Example: Classify whether an email is spam based on words it contains.
+
+![alt text](images/q-learning.png)
+
+Random Forest
+
+Support Vector Machines (SVM)
+
+Neural Networks
+
+#### 2. Unsupervised Learning
+
+The model finds patterns in unlabeled data.
+
+Example algorithms:
+
+K-Means Clustering
+
+Hierarchical Clustering
+
+Principal Component Analysis (PCA)
+
+Autoencoders
+
+#### 3. Reinforcement Learning
+
+The model learns by interacting with an environment and receiving rewards or penalties.
+
+Example algorithms:
+
+Q-Learning
+
+Deep Q Networks (DQN)
+
+Policy Gradient Methods
+
+### 3. How Does ChatGPT Learn?
+
+Supervised Learning: Trained on labeled data to learn language patterns.
+
+Reinforcement Learning with Human Feedback (RLHF): Fine-tuned using feedback from human reviewers to improve response quality.
+
+Neural Networks: Uses deep learning architectures (Transformers) to generate responses.
+
+
+
+
