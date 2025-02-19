@@ -174,19 +174,19 @@ Today, we explored fundamental AI concepts and different types of machine learni
 
 ### 1. Introduction to AI Concepts
 
-What is Artificial Intelligence?
+**What is Artificial Intelligence?**
 
 Artificial Intelligence (AI) is the simulation of human intelligence in machines that can perform tasks such as learning, reasoning, problem-solving, perception, and language understanding.
 
-Key AI Concepts:
+**Key AI Concepts**:
 
-Machine Learning (ML): A subset of AI that enables machines to learn patterns from data.
+**Machine Learning (ML)**: A subset of AI that enables machines to learn patterns from data.
 
-Deep Learning (DL): A subset of ML using neural networks with multiple layers to model complex patterns.
+**Deep Learning (DL)**: A subset of ML using neural networks with multiple layers to model complex patterns.
 
-Natural Language Processing (NLP): Enables machines to understand and generate human language.
+**Natural Language Processing (NLP)**: Enables machines to understand and generate human language.
 
-Computer Vision: Allows machines to interpret and process images and videos.
+**Computer Vision**: Allows machines to interpret and process images and videos.
 
 ### 2. Types of Machine Learning Algorithms
 
@@ -200,13 +200,13 @@ Example algorithms:
 
 ##### Linear Regression
 
- What it does:
+**What it does**:
 
 Used for predicting continuous values (e.g., house prices, stock prices).
 Finds the best-fit line between input (X) and output (Y).
-🔹 How it works:
+**How it works**:
 
-The equation of a line: Y = mX + b
+The equation of a line: **Y = mX + b**
 The algorithm finds the best values for m (slope) and b (intercept) that minimize errors.
 📌 Example: Predict house prices based on square footage.
 
@@ -214,11 +214,11 @@ The algorithm finds the best values for m (slope) and b (intercept) that minimiz
 
 ##### Logistic Regression
 
-What it does:
+**What it does**:
 
 Used for binary classification (e.g., Spam or Not Spam, Disease or No Disease).
 Instead of predicting a number, it predicts probabilities between 0 and 1.
-🔹 How it works:
+**How it works**:
 
 Uses the sigmoid function to map outputs between 0 and 1.
 If probability > 0.5 → Class 1
@@ -228,22 +228,22 @@ If probability < 0.5 → Class 0
 ![alt text](images/logistic_regression.png)
 
 ##### Decision Trees
-What it does:
+**What it does**:
 
 Works like a flowchart: "If X happens, then do Y"
 Used for both classification and regression problems.
-🔹 How it works:
+**How it works**:
 
 Splits the dataset into smaller groups based on feature importance.
 Each node represents a decision rule, and leaves represent predictions.
 📌 Example: Classify whether an email is spam based on words it contains.
 
 
-Random Forest
+**Random Forest**
 
-Support Vector Machines (SVM)
+**Support Vector Machines (SVM)**
 
-Neural Networks
+**Neural Networks**
 
 #### 2. Unsupervised Learning
 
@@ -252,22 +252,22 @@ The model finds patterns in unlabeled data.
 Example algorithms:
 
 ##### K-Means Clustering :
-What it does:
+**What it does**:
 
 Unsupervised learning algorithm for grouping data into clusters.
 Used in customer segmentation, anomaly detection, etc.
-🔹 How it works:
+**How it works**:
 
 Selects K cluster centers randomly.
 Assigns each data point to the nearest cluster.
 Updates cluster centers and repeats until convergence.
 📌 Example: Group customers based on shopping behavior.
 
-Hierarchical Clustering
+**Hierarchical Clustering**
 
-Principal Component Analysis (PCA)
+**Principal Component Analysis (PCA)**
 
-Autoencoders
+**Autoencoders**
 
 #### 3. Reinforcement Learning
 
@@ -277,11 +277,11 @@ Example algorithms:
 
 ##### Q-Learning :
 
-What it does:
+**What it does**:
 
 Reinforcement Learning algorithm where an agent learns by interacting with an environment.
-Used in game AI, robotics, self-driving cars.
-🔹 How it works:
+Used in **game AI, robotics, self-driving cars**.
+**How it works**:
 
 The AI takes actions, receives rewards, and updates its Q-values.
 It learns the best actions over time to maximize rewards.
@@ -289,17 +289,17 @@ It learns the best actions over time to maximize rewards.
 
 ![alt text](images/q-learning.png)
 
-Deep Q Networks (DQN)
+**Deep Q Networks (DQN)**
 
-Policy Gradient Methods
+**Policy Gradient Methods**
 
 ### 3. How Does ChatGPT Learn?
 
-Supervised Learning: Trained on labeled data to learn language patterns.
+**Supervised Learning**: Trained on labeled data to learn language patterns.
 
-Reinforcement Learning with Human Feedback (RLHF): Fine-tuned using feedback from human reviewers to improve response quality.
+**Reinforcement Learning with Human Feedback (RLHF)**: Fine-tuned using feedback from human reviewers to improve response quality.
 
-Neural Networks: Uses deep learning architectures (Transformers) to generate responses.
+**Neural Networks**: Uses deep learning architectures (Transformers) to generate responses.
 
 
 
