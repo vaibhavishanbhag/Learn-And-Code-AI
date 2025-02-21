@@ -184,4 +184,38 @@ plt.title("Agent's Path to Goal")
 plt.show()
 ```
 
----
+# Questions & Answers - Day 4
+
+## 1. What is Normal Distribution?
+**Answer:**  
+Normal distribution, also called the Gaussian distribution, is a probability distribution that is symmetric around the mean. Most of the values cluster around the center, and the probabilities taper off equally on both sides. It is widely used in statistics and machine learning.
+
+**Example:** Heights of people in a population often follow a normal distribution.
+
+![alt text](images/normal_distribution.png)
+
+## 2. What is Data Preprocessing in Machine Learning?
+**Answer:**  
+Data preprocessing is the process of cleaning and transforming raw data into a format suitable for training machine learning models. It includes steps like handling missing values, encoding categorical data, feature scaling, and data normalization.
+
+## 3. What is One-Hot Encoding and why is it used?
+**Answer:**  
+One-Hot Encoding is a method of converting categorical variables into binary vectors. It ensures that machine learning algorithms can interpret categorical data correctly.
+
+**Example:**  
+If we have a column "Color" with values `[Red, Blue, Green]`, one-hot encoding converts it into:
+
+| Red | Blue | Green |
+|-----|------|-------|
+|  1  |  0   |   0   |
+|  0  |  1   |   0   |
+|  0  |  0   |   1   |
+
+## 4. What is Feature Scaling and why do we need it?
+**Answer:**  
+Feature scaling is the process of normalizing or standardizing numerical features to bring them within a similar range. It is needed because some machine learning algorithms, like gradient descent-based models, are sensitive to differences in scale.
+
+**Common Methods:**
+- **Standardization**: Transforms data to have mean = 0 and standard deviation = 1.
+- **Normalization**: Scales data between a fixed range, typically [0,1] or [-1,1].
+
