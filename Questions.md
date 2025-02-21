@@ -192,7 +192,7 @@ Normal distribution, also called the Gaussian distribution, is a probability dis
 
 **Example:** Heights of people in a population often follow a normal distribution.
 
-![alt text](images/normal_distribution.png)
+![alt text](Week1/images/normal_distribution.png)
 
 ## 2. What is Data Preprocessing in Machine Learning?
 **Answer:**  
@@ -218,4 +218,7 @@ Feature scaling is the process of normalizing or standardizing numerical feature
 **Common Methods:**
 - **Standardization**: Transforms data to have mean = 0 and standard deviation = 1.
 - **Normalization**: Scales data between a fixed range, typically [0,1] or [-1,1].
+
+
+
 
