@@ -1,4 +1,4 @@
-# Questions and Answers
+# Questions and Answers - Day 2
 
 ## 📌 Python Basics and Data Structures
 ### 1. Can we add elements of different data types in the same list?
@@ -31,7 +31,7 @@
 ### 10. What is the meaning of Polymorphism in OOP?
 **Answer**: Polymorphism allows objects of different classes to be treated as objects of a common base class. It also refers to the ability of a class to define methods that can be overridden in subclasses.
 
-# Questions & Answers
+# Questions & Answers - Day 3
 
 ## AI Basics
 
@@ -219,6 +219,16 @@ Feature scaling is the process of normalizing or standardizing numerical feature
 - **Standardization**: Transforms data to have mean = 0 and standard deviation = 1.
 - **Normalization**: Scales data between a fixed range, typically [0,1] or [-1,1].
 
+# Questions & Answers - Day 5
 
+## 1. What is the purpose of train-test split?
+→ To evaluate model performance on unseen data.
 
+## 2. Why do we use feature scaling?
+→ To normalize numerical values and improve model performance.
 
+## 3. What is Grid Search?
+→ A technique to find the best hyperparameters by trying all possible combinations.
+
+## 4.Why do we use Random Forest?
+→ It is an ensemble model that reduces overfitting and improves accuracy.

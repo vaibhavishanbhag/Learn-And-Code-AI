@@ -305,7 +305,7 @@ It learns the best actions over time to maximize rewards.
 # Day 4 - Data Preprocessing in AI & Building Our First AI Model
 
 ## Objective 
-In this session, we learnt about **Feature engineering** and its techniques with hands-on **Data Preprocessing** and explored how to train a basic Machine Learning model using `scikit-learn`. We covered data preprocessing, model training, evaluation, and interpretation of results.
+In this session, we will learn about **Feature engineering** and its techniques with hands-on **Data Preprocessing** and explored how to train a basic Machine Learning model using `scikit-learn`. We covered data preprocessing, model training, evaluation, and interpretation of results.
 
 #### Feature Engineering
 
@@ -542,5 +542,29 @@ F1-Score = 2× (Precision x Recall / Precision + Recall)
 - Logistic Regression is a basic classification algorithm that works well for binary classification.
 - The confusion matrix and classification report provide insights into model performance.
 
+# Day 5 - Model Training & Optimization
 
+## Objective 
+In this session, we will train an optimized ML model using preprocessed data,understand **train-test split** & model evaluation and improve accuracy using **hyperparameter tuning**.
 
+### Step1: Splitting Data & Training ML Model
+Before training, we split data into:
+
+- **Training Set** (80%) → Model learns from this.
+- **Testing Set** (20%) → Model is evaluated on this.
+
+### Step 2: Hyperparameter Tuning using Grid Search
+
+Now, let’s improve our model using Grid Search to find the best parameters.
+
+#### Summary of What We Did
+
+- Loaded Titanic dataset.
+- Selected relevant features & handled missing values.
+- Converted categorical data (Sex) to numeric.
+- Split data into training (80%) and testing (20%).
+- Scaled the data using StandardScaler.
+- Trained a Random Forest Classifier.
+- Evaluated the model's performance.
+- Used Grid Search to optimize hyperparameters.
+- Retrained the model and achieved a better accuracy.
