@@ -181,3 +181,95 @@ Since Random Search and Grid Search explore a fixed number of combinations, they
 - Best Accuracy from Optuna: 81.59%
 
 **Final XGBoost Accuracy after Bayesian Optimization: 82.68%**
+
+## Day 2 - Feature
+### Objective
+We'll continue improving our model with feature engineering, ensemble learning, and LightGBM. 
+
+#### Step 1: Feature Engineering
+We’ll create new features from existing ones in the Titanic dataset. Let’s start by:
+✅ Checking correlations between features & survival.
+✅ Creating new features like:
+- FamilySize = SibSp + Parch + 1
+- Title Extraction from names
+- Ticket Prefix
+- Cabin Presence
+
+![alt text](images/check_features.png)
+
+**Step 1: Create New Features**
+We'll create the following:
+- FamilySize = SibSp + Parch + 1 (Passengers traveling together)
+- Title = Extracted from Name (e.g., Mr, Miss, Master)
+- IsAlone = Whether a passenger is traveling alone
+- HasCabin = Whether a passenger has a cabin assigned
+
+**Step1: Check Survival Rate by New Features**
+
+![alt text](images/visualize_family_size.png)
+![alt text](images/visualize_title.png)
+![alt text](images/visualize_alone.png)
+![alt text](images/visualize_cabin_availability.png)
+
+**Step 2: Feature Selection (Choosing Best Features)**
+![alt text](images/best_features.png)
+
+**Observations**
+- Fare and Age are the most important features.
+- Title_Mr, Sex_male, and FamilySize also contribute significantly.
+- Less common titles like Title_Lady, Title_Major, and Title_Rev have very little impact.
+
+1. Train Initial XGBoost Model
+
+- We trained an XGBoost classifier on the dataset.
+- Extracted feature importance scores from the trained model.
+
+2. Identified Important Features
+
+- We sorted features based on their importance.
+- Set a threshold of 0.02 to filter out less significant features.
+- Selected only those features that had an importance score above the threshold.
+
+3. Selected Features
+The following features were selected based on their importance:
+
+**['PassengerId', 'Fare', 'Age', 'Title_Mr', 'Sex_male', 'Pclass', 'FamilySize', 'Title_Mrs', 'Title_Miss', 'HasCabin', 'SibSp', 'Parch', 'Embarked_S']**
+
+4. Trained Models on Selected Features
+We retrained XGBoost and Random Forest using only the selected features.
+
+Results:
+**XGBoost Accuracy: 81.01%**
+**Random Forest Accuracy: 83.8%**
+
+#### Step 2: Ensemble Methods (combining XGBoost & Random Forest)
+Now, let's move to Ensemble Learning, where we'll combine XGBoost and Random Forest to improve accuracy.
+
+Steps:
+- Train both models separately.
+- Use Voting Classifier (Hard/Soft voting) to combine predictions.
+- Compare accuracy with individual models.
+**Ensemble Model Accuracy: 82.12 %**
+
+Our ensemble model's accuracy is **82.12**%, which is slightly lower than our **Random Forest model (83.8%)**.
+
+This suggests that **Random Forest alone is performing better** than the ensemble of **XGBoost + Random Forest**.
+
+##### Weighted ensemble
+Let's start with a **weighted ensemble** by assigning more weight to Random Forest, since it's performing better.
+
+We'll combine the predictions as follows:
+**Final Prediction = 0.7 × Random Forest Prediction +0.3 × XGBoost Prediction**
+
+**Weighted Ensemble Accuracy: 82.68 %**
+
+The weighted ensemble gave a **slight improvement over the base XGBoost model** but is still slightly **below the standalone Random Forest accuracy (83.8%).**
+
+#### Step 3: Try with LightGBM Model
+
+Steps for LightGBM:
+1. Train a LightGBM model using the same selected features.
+2. Tune hyperparameters for the best performance.
+3. Compare accuracy with XGBoost, Random Forest, and Ensemble models.
+
+LightGBM only gave about **71% accuracy** so we will continue with Random Forest.
