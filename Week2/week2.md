@@ -182,7 +182,7 @@ Since Random Search and Grid Search explore a fixed number of combinations, they
 
 **Final XGBoost Accuracy after Bayesian Optimization: 82.68%**
 
-## Day 2 - Feature
+## Day 2 - Feature Engineering,Ensemble learning & LightGBM
 ### Objective
 We'll continue improving our model with feature engineering, ensemble learning, and LightGBM. 
 
@@ -272,4 +272,87 @@ Steps for LightGBM:
 2. Tune hyperparameters for the best performance.
 3. Compare accuracy with XGBoost, Random Forest, and Ensemble models.
 
-LightGBM only gave about **71% accuracy** so we will continue with Random Forest.
+
+## Day 3 - LightGBM,Stacking Ensemble & Random Forest Hyperparameter Tuning.
+
+**Train a LightGBM model using the same selected features**
+LightGBM is currently underperforming compared to **XGBoost (81.01%) and Random Forest(83.24%)**. Let’s try hyperparameter tuning to see if we can improve it..
+
+**Tune LightGBM using RandomizedSearchCV**
+LightGBM got worse after tuning. That suggests that either:
+1. The default parameters were already optimal for this dataset.
+2. The tuning search space didn't align well with the dataset.
+
+We have two options:
+
+1. Manually adjust parameters based on previous results
+Let's try increasing n_estimators and max_depth, as LightGBM might be underfitting with the current values.
+
+Alright, manual tuning helped but still didn’t beat the original 82.68% from default LightGBM. This confirms that:
+
+- LightGBM default settings were already strong for this dataset.
+- Hyperparameter tuning didn’t generalize well, possibly due to overfitting on the training set.
+
+**Next Steps: Stacking Ensemble**
+Since we've now tested XGBoost, Random Forest, and LightGBM, the best approach is to combine them using a stacking model.
+
+Instead of choosing one model, we let all three vote while a **meta-model (like Logistic Regression)** learns how to combine their strengths.
+
+Your **Stacking Model Accuracy: 81.56%** is close to your manually tuned LightGBM (81.01%), but still lower than **XGBoost (81.01%) and Random Forest(83.24%)**.
+
+Let's tune Random Forest using RandomizedSearchCV to see if we can push the accuracy beyond 83.24%.
+
+**Random Forest Hyperparameter Tuning**
+We'll optimize:
+
+- n_estimators: Number of trees
+- max_depth: Maximum depth per tree
+- min_samples_split: Min samples needed to split a node
+- min_samples_leaf: Min samples in leaf nodes
+- max_features: Number of features considered per split
+- bootstrap: Whether to use bootstrapping
+
+**Best Parameters**: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': None, 'bootstrap': True}
+**Tuned Random Forest Accuracy: 82.68 %**
+
+The accuracy dropped from **83.24% to 82.68%** after tuning. This means the default hyperparameters were performing better.
+
+Let's tweak some of these parameters manually and re-run:
+**Manually Tuned Random Forest Accuracy: 82.68 %**
+
+This suggests that:
+
+- The default RandomForestClassifier() was already optimal for this dataset.
+- Further tuning won’t give major gains.
+- The features might be limiting model performance.
+
+**Next Steps: Feature Importance Analysis**
+
+![alt text](images/feature_importance.png)
+
+Observations from Feature Importance:
+1. Top Important Features
+
+- Sex_male (most influential)
+- Title_Mr, Fare, PassengerId, Age, Pclass
+These are strong predictors of survival.
+
+2. Low Importance Features
+
+- Embarked_S, Parch, SibSp, Title_Miss, HasCabin
+These contribute little to the model.
+
+**Next Steps:**
+- Remove Low-Importance Features (threshold < 0.03)
+- Drop Embarked_S, Parch, SibSp, HasCabin, Title_Miss
+- Re-train and check accuracy.
+
+**Update Feature Selection & Re-train**
+ Your Random Forest accuracy jumped to **84.92%**!
+
+**Ensemble Learning**
+
+ Now, let’s combine models (Random Forest + LightGBM) using Voting Classifier to see if we can push accuracy even further.
+
+ **Ensemble Model Accuracy: 81.56 %**
+
